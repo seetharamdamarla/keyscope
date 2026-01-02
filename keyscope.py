@@ -12,18 +12,41 @@ from datetime import datetime
 # --- CONFIGURATION & CONSTANTS ---
 
 VERSION = "1.0.0"
-BANNER = """
-\033[1;36m  _  __          _____\033[0m                       
-\033[1;36m | |/ /___ _   _/ ____| ___ ___  _ __   ___ \033[0m
-\033[1;36m | ' // _ \ | | | (___ / __/ _ \| '_ \ / _ \\\033[0m
-\033[1;36m | . \  __/ |_| |\___ \ (_| (_) | |_) |  __/\033[0m
-\033[1;36m |_|\_\___|\__, |_____/\___\___/| .__/ \___|\033[0m
-\033[1;36m            |___/               | |\033[0m          
-\033[1;36m                                |_|\033[0m          
+BANNER_ART = r"""
+██╗  ██╗███████╗██╗   ██╗███████╗ ██████╗ ██████╗ ██████╗ ███████╗
+██║ ██╔╝██╔════╝╚██╗ ██╔╝██╔════╝██╔════╝██╔═══██╗██╔══██╗██╔════╝
+█████╔╝ █████╗   ╚████╔╝ ███████╗██║     ██║   ██║██████╔╝█████╗  
+██╔═██╗ ██╔══╝    ╚██╔╝  ╚════██║██║     ██║   ██║██╔═══╝ ██╔══╝  
+██║  ██╗███████╗   ██║   ███████║╚██████╗╚██████╔╝██║     ███████╗
+╚═╝  ╚═╝╚══════╝   ╚═╝   ╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚══════╝
+"""
 
- \033[1;37m:: KeyScope :: Educational Keystroke Analysis Tool :: v{}\033[0m
- \033[0;33m:: STRICTLY FOR LAB/EDUCATIONAL USE ONLY ::\033[0m
-""".format(VERSION)
+def animate_startup():
+    # Clear screen
+    print("\033[2J\033[H", end="")
+    
+    # 1. Print ASCII Art line by line (Single Color: Red)
+    color = "\033[1;31m" 
+    for line in BANNER_ART.strip().split('\n'):
+        print(color + line + "\033[0m")
+        time.sleep(0.08)
+        
+    print()
+    
+    # 2. Typewriter effect for the tool name and version
+    text = f" :: KeyScope :: Educational Keystroke Analysis Tool :: v{VERSION}"
+    sys.stdout.write("\033[1;37m") # White bold
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.02)
+    sys.stdout.write("\033[0m\n")
+    
+    # 3. Flash the warning (Simple blink simulation)
+    warning = " :: STRICTLY FOR LAB/EDUCATIONAL USE ONLY ::"
+    time.sleep(0.2)
+    sys.stdout.write(f"\033[0;33m{warning}\033[0m\n")
+
 
 DISCLAIMER = """
 \033[1;33m[!] LEGAL WARNING & CONSENT [!]\033[0m
@@ -285,7 +308,13 @@ def interactive_menu():
 # --- MAIN HANDLER ---
 
 def main():
-    print(BANNER)
+    if not sys.argv[1:]:
+        animate_startup()
+    else:
+        # If running with args, just print banner statically to be faster
+        print(BANNER_ART)
+        print(f" \033[1;37m:: KeyScope :: v{VERSION}\033[0m")
+
     
     parser = argparse.ArgumentParser(description="Educational Keylogger Tool")
     subparsers = parser.add_subparsers(dest="command", help="Available commands")
