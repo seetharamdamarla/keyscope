@@ -11,11 +11,11 @@ It allows security researchers and students to visualize how attackers reconstru
 
 ##  Key Features
 
-*   ** Safe Architecture**: Operates strictly within its own terminal session with **no background persistence** or network exfiltration. Requires explicit user consent to run.
-*   ** Ghost Replay Mode**: Replays captured sessions with **exact timing fidelity**, visualizing user hesitation, editing, and typing flow for biometric analysis.
-*   ** Foreground Capture**: Intercepts `stdin` in real-time to demonstrate MITM (Man-in-the-Middle) attacks on terminal input.
-*   ** Heuristic Analysis**: Automatically parses raw logs to reconstruct text (handling backspaces/edits) and highlights potential credential leaks based on typing speed and patterns.
-*   ** Simulation Sandbox**: Includes a "Demo Mode" to generate fake traffic patterns, allowing safe demonstration without real user input.
+*   **Safe Architecture**: Operates strictly within its own terminal session with **no background persistence** or network exfiltration. Requires explicit user consent to run.
+*   **Ghost Replay Mode**: Replays captured sessions with **exact timing fidelity**, visualizing user hesitation, editing, and typing flow for biometric analysis.
+*   **Foreground Capture**: Intercepts `stdin` in real-time to demonstrate MITM (Man-in-the-Middle) attacks on terminal input.
+*   **Heuristic Analysis**: Automatically parses raw logs to reconstruct text (handling backspaces/edits) and highlights potential credential leaks based on typing speed and patterns.
+*   **Simulation Sandbox**: Includes a "Demo Mode" to generate fake traffic patterns, allowing safe demonstration without real user input.
 
 ##  Installation
 
