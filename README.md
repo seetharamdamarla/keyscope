@@ -23,7 +23,7 @@ KeyScope is built with standard Python libraries to ensure maximum portability w
 
 ```bash
 # Clone the repository
-git clone https://github.com/Start-Seetharam/keyscope.git
+git clone https://github.com/seetharamdamarla/keyscope.git
 
 # Enter directory
 cd keyscope
