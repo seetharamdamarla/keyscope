@@ -1,4 +1,4 @@
-# KeyScope 🛡️
+# KeyScope 
 > **Advanced Educational Keystroke Forensics & Biometric Analysis Tool**
 
 [![Python](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/)
@@ -9,15 +9,15 @@
 
 It allows security researchers and students to visualize how attackers reconstruct sensitive data from raw input and analyze the "rhythm" of typing patterns.
 
-## 🚀 Key Features
+##  Key Features
 
-*   **🔒 Safe Architecture**: Operates strictly within its own terminal session with **no background persistence** or network exfiltration. Requires explicit user consent to run.
-*   **👻 Ghost Replay Mode**: Replays captured sessions with **exact timing fidelity**, visualizing user hesitation, editing, and typing flow for biometric analysis.
-*   **🕵️ Foreground Capture**: Intercepts `stdin` in real-time to demonstrate MITM (Man-in-the-Middle) attacks on terminal input.
-*   **🧠 Heuristic Analysis**: Automatically parses raw logs to reconstruct text (handling backspaces/edits) and highlights potential credential leaks based on typing speed and patterns.
-*   **🧪 Simulation Sandbox**: Includes a "Demo Mode" to generate fake traffic patterns, allowing safe demonstration without real user input.
+*   ** Safe Architecture**: Operates strictly within its own terminal session with **no background persistence** or network exfiltration. Requires explicit user consent to run.
+*   ** Ghost Replay Mode**: Replays captured sessions with **exact timing fidelity**, visualizing user hesitation, editing, and typing flow for biometric analysis.
+*   ** Foreground Capture**: Intercepts `stdin` in real-time to demonstrate MITM (Man-in-the-Middle) attacks on terminal input.
+*   ** Heuristic Analysis**: Automatically parses raw logs to reconstruct text (handling backspaces/edits) and highlights potential credential leaks based on typing speed and patterns.
+*   ** Simulation Sandbox**: Includes a "Demo Mode" to generate fake traffic patterns, allowing safe demonstration without real user input.
 
-## 📦 Installation
+##  Installation
 
 KeyScope is built with standard Python libraries to ensure maximum portability without dependencies.
 
@@ -32,7 +32,7 @@ cd keyscope
 chmod +x keyscope.py
 ```
 
-## 🛠️ Usage
+##  Usage
 
 You can run KeyScope in **Interactive Mode** (recommended) or via CLI flags.
 
@@ -60,7 +60,7 @@ Reconstructs the final text and analyzes typing timestamps.
 ./keyscope.py analyze --file my_capture.json
 ```
 
-## ⚠️ Ethical Disclaimer
+##  Ethical Disclaimer
 
 **KeyScope is strictly for educational purposes and defensive security training.**
 
